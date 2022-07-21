@@ -1,0 +1,22 @@
+.nav {
+    height: 100%;
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid rgb(0, 0, 0);
+    border-left: 1px solid rgb(0, 0, 0);
+    border-right: 1px solid rgb(0, 0, 0);
+    background-color: rgb(0,0,0, 0.5);
+}
+.nav a {
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+    border-bottom: 1px solid rgb(0,0,0);
+    color: rgb(212, 212, 212);
+}
+
+.active {
+    background-color: black;
+    color: rgb(212, 212, 212);
+}

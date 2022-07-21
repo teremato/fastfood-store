@@ -1,0 +1,31 @@
+.header {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+
+    background: linear-gradient(to right, rgb(255, 68, 115), rgb(255, 204, 19));
+}
+.container {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 5px;
+    margin:auto;
+}
+.logo {
+    font-size: 30px;
+    font-weight: 700;
+
+    color: white;
+}
+.cart {
+    border-radius: 5px;
+    padding:  5px 10px;
+    background-color: white;
+}
+.cart a {
+    color: rgb(43, 37, 31);
+    text-decoration: none;
+}
