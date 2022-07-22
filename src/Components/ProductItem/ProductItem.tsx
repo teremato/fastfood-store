@@ -8,10 +8,15 @@ interface PropsProductItem {
 
 export const ProductItem : FC<PropsProductItem> = ({product}) => {
     return (
-        <div>
+        <div className={styles.wrapper}>
             <img src={product.img} alt="" />
-            <div>{product.name}</div>
-            <div>{product.price}</div>
+            <div className={styles.container}>
+                <div className={styles.name}>{product.name}</div>
+                <div className={styles.order}>
+                    <div className={styles.price}>{product.price} ₽</div>
+                    <button>Заказать</button>
+                </div>
+            </div>
         </div>
     )
 }

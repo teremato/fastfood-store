@@ -1,0 +1,39 @@
+.wrapper {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+.wrapper img {
+    width: 180px;
+    height: 180px;
+}
+.container {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(255, 152, 68);
+    gap: 30px;
+}
+.name {
+    text-align: center;
+    color: black;
+    padding-bottom: 5px;
+}
+.price {
+    color: rgb(130, 26, 26);
+    font-weight: 700;
+}
+.order {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+.order button {
+    cursor: pointer;
+    border: none;
+    color: rgb(11, 137, 7);
+    background-color: white;
+}

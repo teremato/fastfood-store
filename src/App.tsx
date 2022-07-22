@@ -4,12 +4,15 @@ import { Header } from './Components/Header/Header';
 import { Caterogies } from './Components/Categories/Categories';
 import { Categoria } from './Components/pages/Categoria/Categoria';
 import { Cart } from './Components/pages/Cart/Cart';
-import './App.css'
 import { Description } from './Components/Description/Description';
+import { Provider } from 'react-redux';
+import store from './redux';
+import './App.css'
 
 function App() {
   return (
-    <BrowserRouter>
+    <Provider store={store}>
+          <BrowserRouter>
       <div className="App">
         <div className="wrapper">
           <Header/>
@@ -24,6 +27,7 @@ function App() {
         </div>
       </div>
     </BrowserRouter>
+    </Provider>
   );
 }
 
