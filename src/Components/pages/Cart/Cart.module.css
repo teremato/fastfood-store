@@ -5,6 +5,9 @@
     background-color: rgb(0, 0, 0, 0.5);
     color: rgb(212, 212, 212);
 }
+.cart_active {
+    height: 100%;
+}
 .title {
     font-size: 24px;
     color: rgb(212, 212, 212);
@@ -28,3 +31,9 @@
     background-color: rgb(255, 68, 115);
     color: white;
 }
+.list {
+    display:  flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 10px;
+} 

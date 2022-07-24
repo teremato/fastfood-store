@@ -1,5 +1,9 @@
 import { FC, useEffect, useState } from "react"
+import { useDispatch } from "react-redux"
+import { BurgersSize } from "../../../Constans/BurgersSize"
+import { Category } from "../../../Constans/Category"
 import { Operators } from "../../../Constans/Operators"
+import { addToCart } from "../../../redux/action/addToCart"
 import { IProduct } from "../../../types/product"
 import styles from "./product-default.module.css"
 
@@ -12,12 +16,15 @@ interface PropsProductDefault {
 
 export const ProductDefault : FC<PropsProductDefault> = ({product, setIsActive, isActive}) => {
 
+    const dispatch = useDispatch()
     const [count, setCount] = useState(() => product.count)
     const [price, setPrice] = useState(() => product.price)
+    const [size, setSize] = useState('S')
 
     useEffect(() => {
-        setPrice(product.price * count)
-    },[product.price, count])
+        setPrice((product.price + pricePerPrice[size]) * count)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[product.price, count, size])
 
     const addCount = (sign: string) => {
         if(sign === Operators.ADD) {setCount(count + 1)}
@@ -29,6 +36,19 @@ export const ProductDefault : FC<PropsProductDefault> = ({product, setIsActive, 
         setIsActive(false)
         setCount(() => product.count)
         setPrice(() => product.price)
+        setSize('S')
+    }
+    const changeSize = (size: string) => { setSize(size) }
+
+    const pricePerPrice : Record<string, number> = {
+        [BurgersSize.SIZE_S] : 0,
+        [BurgersSize.SIZE_M]: 50,
+        [BurgersSize.SIZE_XL]: 70
+    }
+
+    const toCart = () => {
+        dispatch(addToCart({...product, count: count, price: price, size: size}))
+        closedMenu()
     }
 
     return (
@@ -45,6 +65,18 @@ export const ProductDefault : FC<PropsProductDefault> = ({product, setIsActive, 
                             <div className={styles.description}>{product.description}</div>
                         </div>
                         <div className={styles.controller}>
+                            {(product.category === Category.BURGERS) ? 
+                            <div className={styles.size_cntroller}>
+                                <button 
+                                className={(size === BurgersSize.SIZE_S) ? `${styles.size_btn} ${styles.btn_active}` : styles.size_btn}
+                                onClick={() => changeSize(BurgersSize.SIZE_S)}>S</button>
+                                <button 
+                                className={(size === BurgersSize.SIZE_M) ? `${styles.size_btn} ${styles.btn_active}` : styles.size_btn}
+                                onClick={() => changeSize(BurgersSize.SIZE_M)}>M</button>
+                                <button 
+                                className={(size === BurgersSize.SIZE_XL) ? `${styles.size_btn} ${styles.btn_active}` : styles.size_btn}
+                                onClick={() => changeSize(BurgersSize.SIZE_XL)}>XL</button>
+                            </div> : ''}
                             <div className={styles.count}>
                                 <div>Цена: {price}₽</div>
                                 <div className={styles.controller_count}>
@@ -53,7 +85,7 @@ export const ProductDefault : FC<PropsProductDefault> = ({product, setIsActive, 
                                     <button onClick={() => addCount(Operators.SUBTRACT)} className={styles.count_btn}>-</button>
                                 </div>
                             </div>
-                            <button className={styles.order_btn}>Добавить в корзину</button>
+                            <button onClick={() => toCart()} className={styles.order_btn}>Добавить в корзину</button>
                         </div>
                     </div>
                 </div>

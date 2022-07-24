@@ -29,41 +29,41 @@ const initState : IShopState = {
           category: 'burgers', price: 290, count: 1, size: 'S'},
         {id: 1, name: 'Наггетсы', description: 'Такие хрустящие..',
          img: 'https://avatars.mds.yandex.net/i?id=74f64eb6c1052f6d0ef5c608d3d9f658-5910641-images-thumbs&n=13',
-          category: 'snecks', price: 30, count: 1},
+          category: 'snecks', price: 30, count: 1, size: 'S'},
         {id: 1, name: 'Картошка-Фри', description: 'Как у бабушки...',
          img: 'https://ru.alcapone.ks.ua/upload/25e25495-2f4a-474c-9fa8-d3bab8d0a229/size-1/12779f31-7fd2-4877-98e8-ada700ac4ef1.jpg',
-          category: 'snecks', price: 25, count: 1},
+          category: 'snecks', price: 25, count: 1, size: 'S'},
         {id: 1, name: 'Луковые колечки', description: 'К пиву :)',
          img: 'https://st.depositphotos.com/1000374/2885/i/450/depositphotos_28850629-stock-photo-onion-rings.jpg',
-          category: 'snecks', price: 20, count: 1},
+          category: 'snecks', price: 20, count: 1, size: 'S'},
         {id: 1, name: 'Твистер', description: 'Взрыв из овощей с мясом',
          img: 'http://express-bulka.ru/image/cache/catalog/KFC/twister_de_lux-500x500.jpg',
-          category: 'snecks', price: 40, count: 1},
+          category: 'snecks', price: 40, count: 1, size: 'S'},
         {id: 1, name: 'Пирожок', description: 'Такой сладкий...',
          img: 'https://i5.stat01.com/2/4337/143368470/075a3e/site-800x800-pieraspcream-jpg.jpg',
-          category: 'snecks', price: 25, count: 1},
+          category: 'snecks', price: 25, count: 1, size: 'S'},
         {id: 1, name: 'Стрипсы', description: 'Такие острые!',
          img: 'https://mnogopizza.com/upload/gaufrette/6/e/e/6eef89bb00da3342558ba4f4f7708a628e14bb4f/no-name.png',
-          category: 'snecks', price: 20, count: 1},
+          category: 'snecks', price: 20, count: 1, size: 'S'},
         {id: 1, name: 'Кола', description: 'Освежает, как ни что другое',
         img: 'https://pizzaking96.ru/dir_images/catalogs_file1_19_l.jpg',
-        category: 'drinks', price: 60, count: 1
+        category: 'drinks', price: 60, count: 1, size: 'S'
         },
         {id: 2, name: 'Пепси-Кола', description: 'Вкусно, как никогда'
         , img: 'https://продукты-для-вас.рф/uploads/images/items/338-pepsi-1-l-but.jpg',
-            category: 'drinks', price: 58, count: 1},
+            category: 'drinks', price: 58, count: 1, size: 'S'},
         {id: 3, name: 'Фанта', description: 'Апельсины, ммм :)',
             img: 'https://ne-polezno.ru/upload/iblock/144/14435cb5e8f24c02844fd472ae695693.jpg',
-            category: 'drinks', price: 55, count: 1},
+            category: 'drinks', price: 55, count: 1, size: 'S'},
         {id: 4, name: 'Спрайт', description: 'Бодрит, как никогда',
             img: 'https://dobryanka-rus.ru/storage/goods/189032_7QtH1.jpg',
-            category: 'drinks', price: 55, count: 1},
+            category: 'drinks', price: 55, count: 1, size: 'S'},
         {id: 5, name: 'Коффе', description: 'Помогает взбодриться :)',
             img: 'https://catherineasquithgallery.com/uploads/posts/2021-03/1614556301_72-p-chashka-kofe-na-belom-fone-92.jpg',
-            category: 'drinks', price: 60, count: 1},
+            category: 'drinks', price: 60, count: 1, size: 'S'},
         {id: 6, name: 'Чай', description: 'Поможет согреться',
             img: 'https://domstrousam.ru/wp-content/uploads/2021/02/chay_gorchit.jpg',
-            category: 'drinks', price: 30, count: 1},
+            category: 'drinks', price: 30, count: 1, size: 'S'},
     ],
     cart: []
 }
@@ -71,7 +71,7 @@ const initState : IShopState = {
 export const shopReducer = (state = initState, action : IAction) : IShopState => {
     switch(action.type){
         case Actions.ADD_TO_CART:
-            return state;
+            return {...state, cart: [...state.cart, action.payload]};
         default: return state
     }
 }
