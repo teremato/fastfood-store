@@ -12,9 +12,8 @@ export const Cart: FC = () => {
             <div className={styles.container}>
                 <div className={styles.title}>Корзина</div>
                 <div className={styles.buy}>
-                    <div>Стоимость: {cart.map(item => item.price).reduce((total, item) => {
-                        return total + item
-                    })}₽</div>
+                    <div>Стоимость: {(cart.length > 0) ? 
+                    cart.map(item => item.price).reduce((total, item) => {return total + item}) : ''}₽</div>
                     <button className={styles.btn}>Оплатить</button>
                 </div>
             </div>

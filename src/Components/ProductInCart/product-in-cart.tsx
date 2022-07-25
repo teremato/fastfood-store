@@ -1,5 +1,7 @@
 import { FC } from "react";
+import { useDispatch } from "react-redux";
 import { Category } from "../../Constans/Category";
+import { removeFromCart } from "../../redux/action/addToCart";
 import { IProduct } from "../../types/product";
 import styles from "./product-in-cart.module.css"
 
@@ -8,6 +10,8 @@ interface PropsToProductCart {
 }
 
 export const ProductInCart : FC<PropsToProductCart> = ({ product }) => {
+    const dispatch = useDispatch()
+
     return (
         <div className={styles.wrapper}>
             <img src={product.img} alt={product.name} />
@@ -21,7 +25,8 @@ export const ProductInCart : FC<PropsToProductCart> = ({ product }) => {
                         <div>Размер: {product.size}</div> : ' '
                         }
                     </div>
-                    <button className={styles.btn_remove}>Удалить</button>
+                    <button onClick={() => dispatch(removeFromCart(product.id))} 
+                    className={styles.btn_remove}>Удалить</button>
                 </div>
                 <div className={styles.price}>Цена: {product.price}₽</div>
             </div>

@@ -8,6 +8,7 @@ export const Header: FC = () => {
             <div className={styles.container}>
                 <div className={styles.logo}>La, APPETITO</div>
                 <div className={styles.cart}>
+                    <Link to="/orders">Заказы</Link>
                     <Link to="/cart">Корзина</Link>
                 </div>
             </div>

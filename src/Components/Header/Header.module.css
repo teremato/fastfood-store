@@ -21,11 +21,13 @@
     color: white;
 }
 .cart {
-    border-radius: 5px;
-    padding:  5px 10px;
-    background-color: white;
+    display: flex;
+    gap: 10px;
 }
 .cart a {
     color: rgb(43, 37, 31);
     text-decoration: none;
+    border-radius: 5px;
+    padding:  5px 10px;
+    background-color: white;
 }
