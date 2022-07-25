@@ -1,0 +1,89 @@
+.wrapper {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(0, 0, 0, 0.5);
+    opacity: 0%;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .2s;
+}
+.active {
+    opacity: 100%;
+    pointer-events: all;
+}
+.window {
+    width: 400px;
+    height: 500px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.closed_bar {
+    display: flex;
+    justify-content: right;
+    padding: 5px;
+    border-bottom: 1px solid black;
+}
+.closed_btn {
+    background-color: orange;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.btn_container {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+}
+.order_sum {
+    font-size: 20px;
+    color: black;
+}
+.btn_container button {
+    width: 100%;
+    background-color: orange;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+.form input {
+    width: 90%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    font-size: 16px;
+}
+.form .tag {
+    font-size: 19px;
+    color: black;
+}
+.name_tag {
+    color: black;
+    font-size: 25px;
+    text-align: center;
+    padding: 5px;
+}

@@ -30,6 +30,7 @@
     border-radius: 5px;
     background-color: rgb(255, 68, 115);
     color: white;
+    cursor: pointer;
 }
 .list {
     display:  flex;
