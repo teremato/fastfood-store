@@ -1,4 +1,7 @@
 import { FC, useState } from "react";
+import { useDispatch } from "react-redux";
+import { clearCart, doOrder } from "../../../redux/action/addToCart";
+import { useTypeSelector } from "../../../redux/hooks/useTypeSelector";
 import styles from './orders-form.module.css'
 
 interface PropMapOrderForm {
@@ -9,12 +12,28 @@ interface PropMapOrderForm {
 
 export const OrdersForm : FC<PropMapOrderForm> = ({ orderSum, isActive, setIsActive }) => {
 
+    const dispatch = useDispatch()
+    const cart = useTypeSelector(state => state.data.cart)
     const [userInput, setUserInput] = useState({
         city: ''.toLowerCase(),
         addres: ''.toLowerCase(),
         entrance: '',
         phone: ''
     })
+
+    const makeOrders = () => {
+        dispatch(doOrder({
+            id: Date.now(),
+            city: userInput.city,
+            adress: userInput.addres,
+            entrance: userInput.entrance,
+            phone: userInput.phone,
+            sum: orderSum,
+            products: [...cart]
+        }))
+        setIsActive(false)
+        dispatch(clearCart())
+    }
 
     return (
         <div className={(isActive) ? `${styles.wrapper} ${styles.active}` : styles.wrapper}>
@@ -50,7 +69,7 @@ export const OrdersForm : FC<PropMapOrderForm> = ({ orderSum, isActive, setIsAct
                     </div>
                     <div className={styles.btn_container}>
                         <div className={styles.order_sum}>Итого: {orderSum}₽</div>
-                        <button>Оплатить</button>
+                        <button onClick={makeOrders}>Оплатить</button>
                     </div>
                 </div>
             </div>
