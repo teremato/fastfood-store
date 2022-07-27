@@ -139,3 +139,34 @@
     background-color: white;
     border: 2px solid orange;
 }
+@media only screen and (max-width: 400px) {
+    .img {
+        width: 100px;
+        height: 100px;
+    }
+    .description {
+        height: 100%;
+    }
+    .wrapper {
+        display: block;
+        height: 100%;
+        width: 100%;
+    }
+    .main_container {
+        font-size: 25px;
+        width: 97.5%;
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+    }
+    .order_btn {
+        width: 100%;
+    }
+    .window{
+        height: 100%;
+        width: 100%;
+    }
+    .exiet{
+        width: 96%;
+    }
+}

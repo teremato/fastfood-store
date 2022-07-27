@@ -20,6 +20,13 @@
 
     color: white;
 }
+.logo a {
+    color: white;
+    transition: .2s;
+}
+.logo a:hover {
+    color: black;
+}
 .cart {
     display: flex;
     gap: 10px;
@@ -30,4 +37,14 @@
     border-radius: 5px;
     padding:  5px 10px;
     background-color: white;
+}
+@media only screen and (max-width: 400px) {
+    .logo {
+        font-size: 24px;
+    }
+    .cart {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
 }

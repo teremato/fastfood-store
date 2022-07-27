@@ -10,13 +10,17 @@ export const Orders: FC = () => {
     return (
         <div className={(orders.length > 5) ? `${styles.orders} ${styles.active}` : styles.orders}>
             <div className={styles.title}>Заказов: {orders.length}</div>
-            <div className={styles.list}>
+            {(orders.length <= 0) ?  <div style={{color: `white`, padding: `10px`}}
+            >Тут пока пусто...
+            </div> : 
+                <div className={styles.list}>
                 {
                     orders.map((item) => {
                         return <OrderItem order={item}/>
                     })
                 }
             </div>
+            }
         </div>
     )
 }

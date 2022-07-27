@@ -49,3 +49,26 @@
     border: none;
     font-size: 16px;
 }
+@media only screen and (max-width: 400px) {
+    .wrapper {
+        width: 100%;
+        gap: 5px;
+    }
+    .price {
+        text-align: center;
+        padding: 5px;
+        width: 93%;
+        font-size: 18px;
+    }
+    .btn_remove {
+        padding: 5px 10px;
+    }
+    .container {
+        padding: 5px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items:flex-start;
+        justify-content: space-between;
+    }
+}

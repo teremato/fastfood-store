@@ -1,0 +1,112 @@
+.container {
+    width: 100%;
+    display: grid;
+    grid-template-areas: 
+    'titile title'
+    'main_frame mainFrame'
+    'left_frame leftFrame'
+    'right_frame rightFrame'
+    'last_frame lastFrame';
+    grid-template-areas: 
+    "title title"
+    "mainFrame mainFrame"
+    "leftFrame rightFrame"
+    "lastFrame lastFrame";
+    row-gap: 10px;
+    column-gap: 10px;
+
+    background-color: rgb(0,0,0, 0.5);
+    border: 1px solid black;
+    padding: 5px;
+}
+.title {
+    height: 30px;
+    grid-area: title;
+    border-bottom: 1px solid black;
+    color: rgb(221, 221, 221);
+    font-size: 24px;
+    padding: 5px;
+}
+.main_frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 200px;
+    grid-area: mainFrame;
+    padding: 10px;
+}
+.main_frame .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+}
+.main_frame .container .name {
+    font-size: 30px;
+    color: black
+}
+.main_frame .container .price {
+    font-size: 20px;
+    color: black
+}
+.main_frame img {
+    height: 170px;
+    width: 170px;
+
+    background-color: white;
+    padding: 7px;
+    border-radius: 7px;
+}
+.left_frame {
+    grid-area: leftFrame;
+}
+.right_frame {
+    grid-area: rightFrame;
+}
+.last_frame {
+    grid-area: lastFrame;
+    display: flex;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+a:hover {
+    color: orange;
+}
+.img {
+    border-radius: 10px;
+    width: 400px;
+    height: 400px;
+}
+.info {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.last_img {
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    width: 550px;
+    height: 550px;
+}
+.lst_container {
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 24px;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    color: whitesmoke;
+}
+.lst_container a {
+    color: orange;
+}

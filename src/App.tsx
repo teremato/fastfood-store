@@ -9,6 +9,7 @@ import { Orders } from './Components/pages/Orders/orders';
 import { Provider } from 'react-redux';
 import store from './redux';
 import './App.css'
+import { Home } from './Components/pages/Home/home';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
               <Route path='/categories/:tag' element={<Categoria/>}/>
               <Route path='/cart' element={<Cart/>}/>
               <Route path='/orders' element={<Orders/>}/>
+              <Route path='/*' element={<Home/>}/>
             </Routes>
           </div>
         </div>

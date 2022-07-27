@@ -24,13 +24,15 @@ export const Cart: FC = () => {
                     <button onClick={() => setIsActive(true)} className={styles.btn}>Оплатить</button>
                 </div>
             </div>
-            <div className={styles.list}>
-            {
-                cart.map((item) => {
-                    return <ProductInCart product={item}/>
-                })
+            {(cart.length <= 0) ? <div style={{padding: '5px'}}>Здесь пока пусто, сначала добавьте вкусняшки!</div> : 
+                <div className={styles.list}>
+                {
+                    cart.map((item) => {
+                        return <ProductInCart product={item}/>
+                    })
+                }
+                </div>
             }
-            </div>
         </div>
     )
 }
